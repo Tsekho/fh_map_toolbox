@@ -1,6 +1,6 @@
 # Foxhole Map Processing Tools
 
-Collection of Python scripts for processing, stitching, and enhancing map layers from [Wolfgang-IX/Foxhole-Map-Project](https://github.com/Wolfgang-IX/Foxhole-Map-Project)
+Collection of Python scripts for processing, stitching, and fixing map layers from [Wolfgang-IX/Foxhole-Map-Project](https://github.com/Wolfgang-IX/Foxhole-Map-Project)
 
 ## Requirements
 
@@ -14,13 +14,13 @@ pip install aiohttp opencv-python numpy
 
 ### 1. `0_download_wolfgang.py`
 
-Downloads `Wolfgang-IX/Foxhole-Map-Project/Images/Baked-Mesh-Map` repository data.
+Downloads `Wolfgang-IX/Foxhole-Map-Project/Images/Baked-Mesh-Map` folder of original layers.
 
 ### 2. `1_process.py`
 
-Processes raw map data with the following operations:
+Processes original layers in following ways:
 
-- **Normalizes heightmaps**
+- **Normalizes heightmaps and saves as png**
   - 60 is the global water level
   - 1 shade of gray = 0.5m
 - **Builds contour lines** (per 2.5m or custom elevation step)
@@ -35,7 +35,7 @@ Processes raw map data with the following operations:
 
 ### 3. `2_build_rdz_and_ranges.py`
 
-Polls API and builds RDZ and structures ranges layers (bases, SH, MG, CG and OBS).
+Polls API, then builds RDZ and structures ranges layers (bases, SH, MH, CG and OBS).
 
 - Supports custom templates
 - Allows choosing which structures to ignore
